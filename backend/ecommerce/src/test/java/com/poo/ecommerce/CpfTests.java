@@ -6,11 +6,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class ClassTest {
-
+public class CpfTests {
     @Test
-    void twoPlusTwoEqualsFour(){
-        var calculator = new Class();
-        assertEquals(4, calculator.add(2,2));
+    void ShouldTestValidCpf(){
+        Cpf cpf = new Cpf("73634135417");
+        assertEquals("73634135417", cpf.getCpf());
     }
 }

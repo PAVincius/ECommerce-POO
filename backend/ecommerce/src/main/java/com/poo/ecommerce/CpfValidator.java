@@ -18,6 +18,7 @@ public class CpfValidator {
 
 		Integer digito1 = calcularDigito(cpf.substring(0,9), pesoCPF);
 		Integer digito2 = calcularDigito(cpf.substring(0,9) + digito1, pesoCPF);
+		cpf.equals(cpf.substring(0,9) + digito1.toString() + digito2.toString());
 		return cpf.equals(cpf.substring(0,9) + digito1.toString() + digito2.toString());
 	}
 }
