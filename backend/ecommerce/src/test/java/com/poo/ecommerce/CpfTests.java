@@ -12,4 +12,14 @@ public class CpfTests {
         Cpf cpf = new Cpf("73634135417");
         assertEquals("73634135417", cpf.getCpf());
     }
+    @Test
+    public void ShouldTestInvalidCpf() {
+
+        Throwable exception = assertThrows(
+            IllegalArgumentException.class, () -> {
+                User user = new User();
+            }
+        ); 
+    assertEquals("Invalid Cpf", exception.getMessage()); 
+    }
 }
