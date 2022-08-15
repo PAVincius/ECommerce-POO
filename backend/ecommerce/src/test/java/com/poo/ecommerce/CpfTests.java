@@ -17,7 +17,7 @@ public class CpfTests {
 
         Throwable exception = assertThrows(
             IllegalArgumentException.class, () -> {
-                User user = new User();
+                Cpf cpf = new Cpf("12312312312");
             }
         ); 
     assertEquals("Invalid Cpf", exception.getMessage()); 
