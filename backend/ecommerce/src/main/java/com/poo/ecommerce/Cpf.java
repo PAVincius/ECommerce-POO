@@ -8,7 +8,7 @@ public class Cpf {
     }
 
     public Cpf(String cpf) {
-        if(CpfValidator.isValidCPF(cpf) == true){
+        if(CpfValidator.isValidCPF(cpf)){
             this.cpf = cpf;
         }else{
             throw new IllegalArgumentException("Invalid Cpf");
