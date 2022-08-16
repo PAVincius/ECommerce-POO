@@ -1,18 +1,17 @@
 package com.poo.ecommerce;
 
 public class OrderItem {
-    String idItem;
-    String price;
-    String quantity;
+    int idItem;
+    int price;
+    int quantity;
 
-    public OrderItem(String idItem2, String price2, int quantity2) {
-    }
-
-    public String getIdItem() {
-        return idItem;
-    }
-
-    public void setIdItem(String idItem) {
+    public OrderItem(int idItem, int price, int quantity) {
         this.idItem = idItem;
+        this.price = price;
+        this.quantity = quantity;
     }
+    public double getTotalOrder(){
+       return this.price * this.quantity;
+    }
+
 }
