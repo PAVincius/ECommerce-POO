@@ -11,16 +11,16 @@ public class CouponTest {
     
     @Test
     void shouldCreateCoupon () {
-        Coupon coupon = new Coupon("TEST10", 10, new Date(1661179271));
+        Coupon coupon = new Coupon("TEST10", 10, new Date());
         boolean isExpired = coupon.isExpired();
         assertEquals(false, isExpired);
     }
 
     @Test
     void shouldCreateCouponAndCalculateDiscount () {
-        Coupon coupon = new Coupon("TEST10", 10, new Date(1661179271));
-        int discount = coupon.calculateDiscount(1000);
-        assertEquals(100, discount);
+        Coupon coupon = new Coupon("TEST10", 10, new Date());
+        double discount = coupon.calculateDiscount(1000.0);
+        assertEquals(100.0, discount);
     }
 
     @Test

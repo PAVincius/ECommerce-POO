@@ -9,7 +9,7 @@ public class FreightCalculator {
         this.quantity = quantity;
     }
 
-    public double calculateFreight(Item item, int quantity) {
-        return (item.getVolume() * 1000 * (item.getDensity()/100)) * quantity;
+    static public double calculate(Item item, int quantity) {
+        return (item.getVolume() * 1000.0 * (item.getDensity()/100.0)) * quantity;
     }
 }

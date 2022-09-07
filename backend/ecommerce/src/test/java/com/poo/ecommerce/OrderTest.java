@@ -11,7 +11,7 @@ public class OrderTest {
 
     @Test
     void shouldCreateOrder () {
-        Order order = new Order("73634135417", new Date());
+        Order order = new Order("73634135417", new Date(1661179271));
         assertEquals(0,order.getTotal());
     }
 
@@ -21,28 +21,28 @@ public class OrderTest {
         order.addItem(new Item(1, "Notebook", "Asus Zephyrus G14", 10000),1);
         order.addItem(new Item(2, "GPU", "RTX 3090 Zotac", 8999),1);
         order.addItem(new Item(3, "Memoria RAM", "G. Skill trident z royal series", 4800),2);
-        int total = order.getTotal();
+        double total = order.getTotal();
         assertEquals(28599, total);
     }
     
     @Test
-    void shouldCreateOrderWith3ItemsAndCupom () {
+    void shouldCreateOrderWith3ItemsAndCoupon() {
         Order order = new Order("73634135417", new Date(1661179271));
         order.addItem(new Item(1, "Notebook", "Asus Zephyrus G14", 10000),1);
         order.addItem(new Item(2, "GPU", "RTX 3090 Zotac", 8999),1);
         order.addItem(new Item(3, "Memoria RAM", "G. Skill trident z royal series", 4800),2);
-        Coupon coupon = new Coupon("UPGRADE15", 15);
+        Coupon coupon = new Coupon("UPGRADE15", 15,  new Date());
         order.addCoupon(coupon);
         double total = order.getTotal();
-        assertEquals(22879.2, total);
+        assertEquals(24309.15, total);
     }
     @Test
-    void shouldCreateOrderWith3ItemsAndExpiredCupom () {
+    void shouldCreateOrderWith3ItemsAndExpiredCoupon () {
         Order order = new Order("73634135417", new Date(1659364871));
         order.addItem(new Item(1, "Notebook", "Asus Zephyrus G14", 10000),1);
         order.addItem(new Item(2, "GPU", "RTX 3090 Zotac", 8999),1);
         order.addItem(new Item(3, "Memoria RAM", "G. Skill trident z royal series", 4800),2);
-        Coupon coupon = new Coupon("UPGRADE15", 15);
+        Coupon coupon = new Coupon("UPGRADE15", 15, new Date(1649364871));
         order.addCoupon(coupon);
         double total = order.getTotal();
         assertEquals(28599, total);

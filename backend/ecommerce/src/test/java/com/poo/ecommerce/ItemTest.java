@@ -16,7 +16,7 @@ public class ItemTest {
 
     @Test
     public void shouldCreateItemWithDimentionsAndCalculateDensity(){
-        Item item = new Item(1, "Notebook", "Asus Zephyrus G14", 1000, new Dimension(100, 30, 10), 3);
+        Item item = new Item(1, "Notebook", "Asus Zephyrus G14", 1000, new Dimension(100, 30, 10),1);
         double density = item.getDensity();
         assertEquals(100, density);
     }

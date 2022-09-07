@@ -10,22 +10,20 @@ public class Coupon {
     
 
     public Coupon(String code, int percentage, Date expiredDate) {
+        this.percentage = percentage;
+        this.code = code;
+        this.expiredDate = expiredDate;
     }
     //override as "optional" parameter
     public Coupon(String code, int percentage) {
     }
-
-    public void setExpiredDate(Date expiredDate) {
-        this.expiredDate = expiredDate;
-    }
-
     public boolean isExpired() {
         if(expiredDate ==  null) return false;
         Date today = new Date();
         return expiredDate.getTime() < today.getTime();
     }
 
-    public int calculateDiscount(int value) {
-        return (value * this.percentage) / 100;
+    public double calculateDiscount(double total) {
+        return (total / 100) * percentage;
     }
 }

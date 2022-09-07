@@ -1,0 +1,4 @@
+idItem,category,description,price,width,height,length,weight
+1,Notebook,Asus Zephyrus G14,10000,40,5,30,1
+2,GPU,RTX 3090 Zotac,8999,40,10,15,1
+3,Memoria RAM,G. Skill trident z royal series,4800,15,1,0.150
